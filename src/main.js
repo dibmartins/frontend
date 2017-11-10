@@ -3,8 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 
 Vue.config.productionTip = false
+
+export const API = axios.create({
+  baseURL: `http://jsonplaceholder.typicode.com/`
+})
+
+Vue.prototype.request = API
 
 /* eslint-disable no-new */
 new Vue({
